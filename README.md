@@ -109,4 +109,4 @@ graph TD
 ✅ Open **Issues & PRs**  
 ✅ Join our **Developer Community**  
 
-📧 *Reach out to us:* [contact@arise.ai](mailto:contact@arise.ai)
+📧 *Reach out to us:* [contact@arise.ai](mailto:rishrishit@gmail.com)
