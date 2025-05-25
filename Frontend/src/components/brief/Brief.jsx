@@ -17,7 +17,7 @@ const Brief = () => {
       </div>
       <div className="text-item" title="text-item-2">
         <h3>Model Metrics</h3>
-        <p> We tuned the probability threshold between 0.30-0.50 to maximize recall 0.86–0.96 while maintaining acceptable precision 0.170.31.</p>
+        <p> We selected the Random Forest model for its robustness in handling missing values, managing complex healthcare data, and reducing overfitting, ensuring reliable and accurate predictions. </p>
       </div>
       <div className="text-item" title="text-item-3">
         <h3>Data Used</h3>
