@@ -9,7 +9,7 @@ const statsData = [
     suffix: "%",
   },
   { label: "Life's that can be saved using this information", value: 80, suffix: "%" },
-  { label: "Accuracy", value: 93, suffix: "%" },
+  { label: "Model Accuracy", value: 93, suffix: "%" },
 ];
 
 function Stats() {
