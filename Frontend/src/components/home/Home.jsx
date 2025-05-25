@@ -43,33 +43,53 @@ function Home() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    console.log(formData)
-    // fetch("https://heart-failure-predictor-production-8618.up.railway.app/predict", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json"
-    //   },
-    //   body: JSON.stringify(formData)
-    // })
-    // .then(response => {
-    //   if (!response.ok) {
-    //     throw new Error(`HTTP error! Status: ${response.status}`);
-    //   }
-    //   return response.json();
-    // })
-    // .then(data => {
-    //   console.log("Prediction:", data);
-    //   setPrediction(data);
-    //   setShowModal(false);
-    //   setShowResultModal(true);
-    // })
-    // .catch(error => {
-    //   console.error("Error:", error);
-    //   alert("An error occurred while making the prediction. Please try again.");
-    // })
-    // .finally(() => {
-    //   setLoading(false);
-    // });
+    
+    // Format datetime fields to match the expected format
+    const formattedData = {
+      ...formData,
+      // Convert datetime-local format to the expected format (YYYY-MM-DD HH:MM:SS)
+      admit_time: formData.admit_time ? formData.admit_time.replace('T', ' ') + ':00' : '',
+      discharge_time: formData.discharge_time ? formData.discharge_time.replace('T', ' ') + ':00' : '',
+      
+      // Convert string numbers to actual numbers for numerical fields
+      creatinine: parseFloat(formData.creatinine),
+      urea_nitrogen: parseFloat(formData.urea_nitrogen),
+      sodium: parseFloat(formData.sodium),
+      potassium: parseFloat(formData.potassium),
+      albumin: parseFloat(formData.albumin),
+      hemoglobin: parseFloat(formData.hemoglobin),
+      hematocrit: parseFloat(formData.hematocrit),
+      magnesium: parseFloat(formData.magnesium)
+    };
+    
+    console.log("Sending data:", formattedData);
+    
+    fetch("https://heart-failure-predictor-production-8618.up.railway.app/predict", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formattedData)
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log("Prediction:", data);
+      setPrediction(data);
+      setShowModal(false);
+      setShowResultModal(true);
+    })
+    .catch(error => {
+      console.error("Error:", error);
+      alert("An error occurred while making the prediction. Please try again.");
+    })
+    .finally(() => {
+      setLoading(false);
+    });
   };
   
   const handleCloseAuthModal = () => {
@@ -166,7 +186,7 @@ function Home() {
               <label>
           <select name="creatinine_flag" required onChange={handleChange}>
             <option value="" disabled selected hidden>--Select--</option>
-            <option value="nan">nan</option>
+            <option value="normal">normal</option>
             <option value="abnormal">abnormal</option>
             <option value="delta">delta</option>
           </select>
@@ -190,7 +210,7 @@ function Home() {
               <label>
           <select name="urea_nitrogen_flag" required onChange={handleChange}>
             <option value="" disabled selected hidden>--Select--</option>
-            <option value="nan">nan</option>
+            <option value="normal">normal</option>
             <option value="abnormal">abnormal</option>
             <option value="delta">delta</option>
           </select>
@@ -202,7 +222,7 @@ function Home() {
                 <label>Sodium *: 
                 <input 
                   type="number" 
-                  name="Sodium" 
+                  name="sodium" 
                   required 
                   onChange={handleChange}
                   placeholder="Enter Sodium value" 
@@ -213,7 +233,7 @@ function Home() {
               <label>
           <select name="sodium_flag" required onChange={handleChange}>
             <option value="" disabled selected hidden>--Select--</option>
-            <option value="nan">nan</option>
+            <option value="normal">normal</option>
             <option value="abnormal">abnormal</option>
             <option value="delta">delta</option>
           </select>
@@ -237,7 +257,7 @@ function Home() {
               <label>
           <select name="potassium_flag" required onChange={handleChange}>
             <option value="" disabled selected hidden>--Select--</option>
-            <option value="nan">nan</option>
+            <option value="normal">normal</option>
             <option value="abnormal">abnormal</option>
             <option value="delta">delta</option>
           </select>
@@ -260,7 +280,7 @@ function Home() {
               <label>
           <select name="albumin_flag" required onChange={handleChange}>
             <option value="" disabled selected hidden>--Select--</option>
-            <option value="nan">nan</option>
+            <option value="normal">normal</option>
             <option value="abnormal">abnormal</option>
             <option value="delta">delta</option>
           </select>
@@ -285,7 +305,7 @@ function Home() {
               <label>
           <select name="hemoglobin_flag" required onChange={handleChange}>
             <option value="" disabled selected hidden>--Select--</option>
-            <option value="nan">nan</option>
+            <option value="normal">normal</option>
             <option value="abnormal">abnormal</option>
             <option value="delta">delta</option>
           </select>
@@ -308,7 +328,7 @@ function Home() {
               <label>
           <select name="hematocrit_flag" required onChange={handleChange}>
             <option value="" disabled selected hidden>--Select--</option>
-            <option value="nan">nan</option>
+            <option value="normal">normal</option>
             <option value="abnormal">abnormal</option>
             <option value="delta">delta</option>
           </select>
@@ -331,7 +351,7 @@ function Home() {
               <label>
           <select name="magnesium_flag" required onChange={handleChange}>
             <option value="" disabled selected hidden>--Select--</option>
-            <option value="nan">nan</option>
+            <option value="normal">normal</option>
             <option value="abnormal">abnormal</option>
             <option value="delta">delta</option>
           </select>
