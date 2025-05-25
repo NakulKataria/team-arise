@@ -118,7 +118,7 @@ function Home() {
         <div className="left-content"> 
           <h1>Checkout for a better future</h1>
           <p>
-            A simple check can reveal life-saving information. Early detection often makes the difference between manageable and serious outcomes...
+           A basic medical check can uncover critical, life-saving insights. Identifying issues early often determines whether a condition remains manageable or escalates into something far more serious and difficult to treat.
           </p>
           <button className="check-btn" onClick={handleOpenModal}>CHECK UP NOW</button>
         </div>
