@@ -4,12 +4,12 @@ import './Stats.css';
 
 const statsData = [
    {
-    label: "Patients readmitted",
+    label: "Readmission cases",
     value: 25,
     suffix: "%",
   },
-  { label: "life's can be saved for a readmitted patient ", value: 80, suffix: "%" },
-  { label: "Accuracy", value: 91, suffix: "%" },
+  { label: "Life's that can be saved using this information", value: 80, suffix: "%" },
+  { label: "Model Accuracy", value: 93, suffix: "%" },
 ];
 
 function Stats() {
