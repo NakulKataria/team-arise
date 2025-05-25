@@ -149,7 +149,7 @@ function Home() {
               <div className='essential'>
                 {/* Name */}
               <div className='card-data'>
-              <label>Name and ID *: 
+              <label>Name and ID : 
                 <input 
                   name="patient_name" 
                   required 
@@ -172,7 +172,7 @@ function Home() {
 
                {/* Creatinine */}
               <div className='card-data'>
-              <label>Creatinine *: 
+              <label>Creatinine : 
                 <input 
                   type="number" 
                   name="creatinine" 
@@ -196,7 +196,7 @@ function Home() {
 
                {/* Urea Nitrogen */}
               <div className='card-data'>
-                <label>Urea Nitrogen *: 
+                <label>Urea Nitrogen : 
                 <input 
                   type="number" 
                   name="urea_nitrogen" 
@@ -219,7 +219,7 @@ function Home() {
 
                {/* Sodium */}
               <div className='card-data'>
-                <label>Sodium *: 
+                <label>Sodium : 
                 <input 
                   type="number" 
                   name="sodium" 
@@ -243,7 +243,7 @@ function Home() {
 
                {/* potassium*/}
               <div className='card-data'>
-                <label>Potassium *: 
+                <label>Potassium : 
                 <input 
                   type="number" 
                   name="potassium" 
@@ -266,7 +266,7 @@ function Home() {
 
                {/* albumin*/}
               <div className='card-data'>
-                <label>Albumin *: 
+                <label>Albumin : 
                 <input 
                   type="number" 
                   name="albumin" 
@@ -291,7 +291,7 @@ function Home() {
 
                {/* Hemoglobin */}
               <div className='card-data'>
-                <label>Hemoglobin *: 
+                <label>Hemoglobin : 
                 <input 
                   type="number" 
                   name="hemoglobin" 
@@ -314,7 +314,7 @@ function Home() {
 
                {/* Hematocrit */}
               <div className='card-data'>
-                <label>Hematocrit *: 
+                <label>Hematocrit : 
                 <input 
                   type="number" 
                   name="hematocrit" 
@@ -337,7 +337,7 @@ function Home() {
 
                {/*Magnesium */}
                <div className='card-data'>
-              <label>Magnesium *: 
+              <label>Magnesium : 
                 <input 
                   type="number" 
                   name="magnesium" 
