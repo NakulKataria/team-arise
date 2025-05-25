@@ -118,13 +118,15 @@
   background: linear-gradient(135deg, rgb(0, 183, 219) 0%, rgb(0, 142, 189) 100%);
 }
 
-.auth-switch {
-  margin-top: 1.5rem;
+.auth-toggle {
+  margin-top: 2rem;
   text-align: center;
   color: #666;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
 }
 
-.switch-button {
+.toggle-button {
   background: none;
   border: none;
   color: rgb(14, 208, 247);
@@ -135,9 +137,15 @@
   transition: color 0.2s;
 }
 
-.switch-button:hover {
+.toggle-button:hover {
   color: rgb(0, 162, 209);
   text-decoration: underline;
+}
+
+.auth-switch {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: #666;
 }
 
 .auth-error {
