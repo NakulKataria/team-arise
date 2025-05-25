@@ -2,6 +2,27 @@
   display: flex;
   flex-direction: row;
 }
+.card-data input,
+.card-data select {
+  width: 100%;
+  color: #212121; /* Add this line */
+}.form-grid input[type="number"],
+.form-grid input[type="date"],
+.form-grid input[type="datetime-local"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+  color: #212121; /* Add this line */
+}.form-grid input,
+.form-grid select {
+  padding: 12px;
+  margin-top: 6px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  transition: all 0.2s ease-in-out;
+  font-size: 14px;
+  color: #212121; /* Add this line */
+}
 .left-content {
   flex: 1;
   text-align: center;
