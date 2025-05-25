@@ -16,7 +16,7 @@ const Brief = () => {
         <p id="first-para">Misclassifying a high-risk patient can be fatal. However, a false positive only leads to extra monitoring, which is far less costly. Hence, we adjusted the model to prioritize recall over precision.</p>
       </div>
       <div className="text-item" title="text-item-2">
-        <h3>Threshold Tuning</h3>
+        <h3>Model Metrics</h3>
         <p> We tuned the probability threshold between 0.30-0.50 to maximize recall 0.86–0.96 while maintaining acceptable precision 0.170.31.</p>
       </div>
       <div className="text-item" title="text-item-3">
