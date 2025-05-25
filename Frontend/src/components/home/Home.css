@@ -43,9 +43,7 @@ button:hover{
 }
 .form-heading{
   font-size: 40px;
-  
 }
-
 
 .modal-overlay {
   position: fixed;
@@ -62,7 +60,7 @@ button:hover{
 
 /* Modal container */
 .modal-content {
-  background: #93f2ff;
+  background: #ffffff;
   border-radius: 12px;
   padding: 30px 40px;
   width: 90%;
@@ -93,86 +91,350 @@ button:hover{
   flex-wrap: wrap;
   flex-direction: column;
 }
-.essential{
+
+.essential {
   display: flex;
   flex-wrap: wrap;
-  margin:5px;
-  gap: 10px;
+  margin: 15px 0;
+  gap: 20px;
   justify-content: center;
 }
-.non-essential{
+
+.non-essential {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
+  align-items: center;
+  margin: 25px 0;
+  padding: 20px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.section-heading {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, rgb(14, 208, 247) 0%, rgb(0, 162, 209) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.section-heading:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(135deg, rgb(14, 208, 247) 0%, rgb(0, 162, 209) 100%);
+  border-radius: 3px;
 }
 
 .form-grid label {
   display: flex;
   flex-direction: column;
   font-size: 15px;
-  color: #000000;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 5px;
 }
 
-.form-grid input[type="text"],
+.form-grid input,
 .form-grid select {
-  padding: 10px;
+  padding: 12px;
   margin-top: 6px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  background-color: #ffffff;
-  transition: border 0.2s ease-in-out;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  transition: all 0.2s ease-in-out;
+  font-size: 14px;
 }
 
 .form-grid input:focus,
 .form-grid select:focus {
-  border-color: #000000;
+  border-color: rgb(14, 208, 247);
+  box-shadow: 0 0 0 2px rgba(14, 208, 247, 0.2);
   outline: none;
+  background-color: #ffffff;
+}
+
+.form-grid input[type="number"],
+.form-grid input[type="date"],
+.form-grid input[type="datetime-local"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.form-grid input[type="number"]::-webkit-outer-spin-button,
+.form-grid input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Card data styling */
+.card-data {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 280px;
+  margin-bottom: 15px;
+}
+
+.card-data:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Blue background for additional (non-required) fields */
+.non-essential .card-data {
+  background-color: #f0f8ff;
+  border: 1px solid #d0e0f0;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  width: 90%;
+  max-width: 500px;
+}
+
+.card-data label {
+  color: #444;
+}
+
+.card-data input,
+.card-data select {
+  width: 100%;
 }
 
 /* Button styles */
 .modal-buttons {
   grid-column: span 2;
   display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  margin-top: 25px;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
 }
 
 .modal-cancel, .modal-submit {
-  padding: 10px 18px;
+  padding: 12px 24px;
   border: none;
-  border-radius: 6px;
-  font-size: 15px;
+  border-radius: 8px;
+  font-size: 16px;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .modal-cancel {
-  background-color: #eee;
-  color: #333;
+  background-color: #f2f2f2;
+  color: #555;
 }
 
 .modal-cancel:hover {
-  background-color: #d5d5d5;
+  background-color: #e0e0e0;
 }
 
 .modal-submit {
-  background-color: #1f3c5b;
+  background: linear-gradient(135deg, rgb(14, 208, 247) 0%, rgb(0, 162, 209) 100%);
   color: white;
+  box-shadow: 0 4px 8px rgba(14, 208, 247, 0.25);
 }
 
 .modal-submit:hover {
-  background-color: #0056b3;
+  background: linear-gradient(135deg, rgb(0, 183, 219) 0%, rgb(0, 142, 189) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(14, 208, 247, 0.3);
 }
 
 /* Headings */
-.modal-content h2 {
+.form-heading {
   text-align: center;
-  margin-bottom: 25px;
-  color: #222;
+  margin-bottom: 30px;
+  color: #333;
+  font-size: 32px;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 10px;
+  background: linear-gradient(135deg, rgb(14, 208, 247) 0%, rgb(0, 162, 209) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
-.card-data{
-  border-color: #000000;
-  border-width:1px ;
+
+.form-heading:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(135deg, rgb(14, 208, 247) 0%, rgb(0, 162, 209) 100%);
+  border-radius: 3px;
+}
+
+/* Add close button to modal */
+.close-modal-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #777;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-modal-btn:hover {
+  color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .essential {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card-data {
+    width: 100%;
+    max-width: 320px;
+  }
+  
+  .modal-content {
+    padding: 20px;
+  }
+  
+  .form-heading {
+    font-size: 28px;
+  }
+}
+
+/* Result Modal Styles */
+.result-modal {
+  max-width: 700px;
+}
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 15px 0;
+}
+
+.result-card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.result-card h3 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, rgb(14, 208, 247) 0%, rgb(0, 162, 209) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.prediction-result {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.risk-indicator {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: white;
+  text-align: center;
+  width: fit-content;
+}
+
+.risk-indicator.high {
+  background: linear-gradient(135deg, #ff5252 0%, #d32f2f 100%);
+  box-shadow: 0 3px 6px rgba(211, 47, 47, 0.3);
+}
+
+.risk-indicator.low {
+  background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+  box-shadow: 0 3px 6px rgba(46, 125, 50, 0.3);
+}
+
+.prediction-result p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+  margin-top: 10px;
+}
+
+.next-steps {
+  background-color: #f0f8ff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.next-steps h3 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, rgb(14, 208, 247) 0%, rgb(0, 162, 209) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.next-steps ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.next-steps li {
+  margin-bottom: 10px;
+  color: #444;
+  line-height: 1.4;
+}
+
+.risk {
+  border-left: 4px solid #d32f2f;
+}
+
+.no-risk {
+  border-left: 4px solid #2e7d32;
+}
+
+/* Responsive styles for the result modal */
+@media (max-width: 768px) {
+  .result-container {
+    gap: 15px;
+  }
+  
+  .result-card h3,
+  .next-steps h3 {
+    font-size: 1.2rem;
+  }
+  
+  .risk-indicator {
+    font-size: 1rem;
+    padding: 6px 12px;
+  }
 }

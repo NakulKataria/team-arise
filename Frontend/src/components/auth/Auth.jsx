@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Auth.css';
+import { useAuth } from '../../context/AuthContext';
 
 const Auth = ({ isOpen, onClose, onLogin }) => {
   const [isLoginMode, setIsLoginMode] = useState(true);
@@ -12,6 +13,7 @@ const Auth = ({ isOpen, onClose, onLogin }) => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const [users, setUsers] = useState([]);
+  const { login } = useAuth();
 
   // Load users from localStorage on component mount
   useEffect(() => {
@@ -79,20 +81,17 @@ const Auth = ({ isOpen, onClose, onLogin }) => {
       }
       setSuccess('Login successful!');
       
-      // Store current user in localStorage with explicit authentication flag
+      // Use the login function from AuthContext
       const userData = {
         name: user.name,
-        email: user.email,
-        isLoggedIn: true,
-        isAuthenticated: true
+        email: user.email
       };
       
-      localStorage.setItem('currentUser', JSON.stringify(userData));
-      localStorage.setItem('isAuthenticated', 'true');
+      login(userData);
       
       // Close modal after successful login
       setTimeout(() => {
-        onLogin(userData);
+        onLogin();
         onClose();
       }, 1500);
     } else {
@@ -201,19 +200,11 @@ const Auth = ({ isOpen, onClose, onLogin }) => {
           </button>
         </form>
         
-        <div className="auth-switch">
-          <p>
-            {isLoginMode 
-              ? "Don't have an account?" 
-              : "Already have an account?"}
-            <button 
-              type="button" 
-              onClick={toggleMode} 
-              className="switch-button"
-            >
-              {isLoginMode ? 'Sign Up' : 'Login'}
-            </button>
-          </p>
+        <div className="auth-toggle">
+          {isLoginMode ? "Don't have an account? " : "Already have an account? "}
+          <button type="button" onClick={toggleMode} className="toggle-button">
+            {isLoginMode ? 'Sign Up' : 'Login'}
+          </button>
         </div>
       </div>
     </div>

@@ -1,23 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import './Navigation.css';
 import Auth from '../auth/Auth';
+import { useAuth } from '../../context/AuthContext';
 
 const Navigation = () => {
     const [showAuthModal, setShowAuthModal] = useState(false);
-    const [currentUser, setCurrentUser] = useState(null);
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
-
-    useEffect(() => {
-        // Check if user is already logged in with explicit authentication flag
-        const storedUser = localStorage.getItem('currentUser');
-        const authFlag = localStorage.getItem('isAuthenticated');
-        
-        if (storedUser && authFlag === 'true') {
-            setCurrentUser(JSON.parse(storedUser));
-            setIsAuthenticated(true);
-        }
-    }, []);
+    const { currentUser, isAuthenticated, logout } = useAuth();
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
@@ -35,17 +24,9 @@ const Navigation = () => {
         setShowAuthModal(false);
     };
 
-    const handleLogin = (user) => {
-        setCurrentUser(user);
-        setIsAuthenticated(true);
-    };
-
-    const handleLogout = () => {
-        // Clear all authentication data
-        localStorage.removeItem('currentUser');
-        localStorage.removeItem('isAuthenticated');
-        setCurrentUser(null);
-        setIsAuthenticated(false);
+    const handleLogin = () => {
+        // Close the modal after login is handled by the Auth component
+        setShowAuthModal(false);
     };
 
     return (
@@ -78,7 +59,7 @@ const Navigation = () => {
                             {currentUser ? (
                                 <div className="user-profile">
                                     <span className="user-name">Hi, {currentUser.name}</span>
-                                    <button onClick={handleLogout}>Logout</button>
+                                    <button onClick={logout}>Logout</button>
                                 </div>
                             ) : (
                                 <button onClick={handleOpenAuthModal}>Signup/Login</button>
