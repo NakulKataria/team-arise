@@ -1,0 +1,147 @@
+.footer {
+    background: linear-gradient(135deg, rgb(183, 240, 251) 0%, rgb(220, 247, 252) 100%);
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.team-name {
+    color: rgb(48, 48, 48);
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+    background: linear-gradient(135deg, rgb(14, 208, 247) 0%, rgb(0, 162, 209) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.aboutus-heading {
+    margin: 0.5rem 0 2rem 0;
+    padding: 0;
+    color: #333;
+    font-size: clamp(2rem, 5vw, 3rem);
+    position: relative;
+    display: inline-block;
+}
+
+.aboutus-heading:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(14, 208, 247, 0.2), rgba(14, 208, 247, 1), rgba(14, 208, 247, 0.2));
+    border-radius: 3px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: linear-gradient(135deg, rgb(43, 163, 255) 0%, rgb(0, 125, 214) 100%);
+    border-radius: 16px;
+    width: 220px;
+    height: 220px;
+    color: rgb(252, 252, 252);
+    margin: 0;
+    box-shadow: 0 10px 20px rgba(0, 125, 214, 0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 125, 214, 0.3);
+}
+
+.card:before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+}
+
+.card:hover:before {
+    animation: shine 1.5s;
+}
+
+@keyframes shine {
+    0% {
+        top: -50%;
+        left: -50%;
+    }
+    100% {
+        top: 150%;
+        left: 150%;
+    }
+}
+
+.names {
+    padding: 20px 5px 10px 5px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.icons {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.icons div {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.icons a {
+    color: white;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.icons a:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        gap: 1.5rem;
+    }
+    
+    .card {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .names {
+        font-size: 1.5rem;
+    }
+}
