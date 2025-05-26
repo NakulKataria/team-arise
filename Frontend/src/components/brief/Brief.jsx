@@ -5,7 +5,7 @@ import "./Brief.css";
 const Brief = () => {
   return (
    <div className="brief-container" id="Brief">
-    <h1 className="brief-heading">Breif on Model</h1>
+    <h1 className="brief-heading">Brief on Model</h1>
     <div className="brief-sub-container">
       <div className="image-brief">
       <img src ={Imagebrief} alt="Image"/>
